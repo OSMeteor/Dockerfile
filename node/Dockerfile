@@ -1,3 +1,10 @@
-FROM node:4-onbuild
-# replace this with your application's default port
+FROM node:4.4.1
 EXPOSE 3000
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+ONBUILD COPY package.json /usr/src/app/
+ONBUILD RUN npm install
+ONBUILD COPY . /usr/src/app
+
+CMD [ "npm", "start" ] 
