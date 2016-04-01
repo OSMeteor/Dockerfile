@@ -8,3 +8,4 @@
 * docker run -it --rm --name node4.4.1  node4.4.1
 
 
+meteor update test 
